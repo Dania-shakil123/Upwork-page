@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upwork</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicoon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <!--For bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" crossorigin="anonymous">
+    
+    <!--css-->
+    <style>
+       * {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      box-sizing: border-box;
+    }
+    
+    header {
+      background-color: white;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+  align-items: center;
+    }
+    
+    .menu {
+      display: inline-block;
+      margin-top: 10px;
+    }
+    
+    .menu > li {
+      float: left;
+      color: black;
+      width: 120px;
+      height: 10px;
+      line-height: 40px;
+      background: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    
+    nav li h1 {
+      display: block;
+      color: green;
+      font-family: Brush Script MT, cursive;
+      font-size: 35px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .sub-menu li {
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 8px 0;
+      color: white;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transform: scale(0);
+      transform-origin: top center;
+      transition: all 300ms ease-in-out;
+    }
+    
+    .sub-menu li:last-child {
+      border-bottom: 0;
+    }
+    
+    .sub-menu li:hover {
+      background: black;
+    }
+    
+    .menu > li:hover .sub-menu li {
+      transform: scale(1);
+    }
+    
+    .menu > li:hover .sub-menu {
+      transform: scale(1);
+    }
+    
+    nav li:hover {
+      color: darkgreen ;
+    }
+    
+    /* Remove hover effect from  upwork*/
+       nav li:nth-child(1):hover
+   
+    {
+      background-color: white;
+      color: black;
+    }
+    .sticky {
+      position: fixed;
+    width: 100%;
+    }
+    .search-form {
+        display: flex;
+        float: right;
+        margin-left: 300px;
+    }
+
+      .search-form select {
+        height: 40px;
+     margin-right:40px ;
+        border-radius: 5px;
+        outline: none;
+      border: none;
+      font-size: 15px;
+      }
+
+      .search-form input[type="text"] {
+        width: 200px;
+        height: 40px;
+        border-radius: 10px;
+        border: gray;
+        padding-left: 10px;
+      }
+    
+      .sign-up-button {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: green;
+        color: white;
+        cursor: pointer;
+        border: none;
+        font-size: 18px;
+        margin: 4px 2px;
+        transition: all 300ms ease-in-out;
+        border-radius: 10px;
+      }
+
+    .log-in{
+       display: inline-block;
+       padding: 5px 10px;
+       color: black;
+       text-decoration: none;
+       font-size: 18px;
+       margin: 4px 2px;;
+    }
+      .sign-up-button:hover {
+        background-color: darkgreen;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: green;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 20px;
+        transition: all 300ms ease-in-out;
+        margin-left: 150px;
+       border-radius: 20px;
+      }
+
+      .button:hover {
+        background-color: darkgreen;
+      }
+      
+      nav li{
+        float: none;
+        display: block;
+      }
+      .list li{
+         display: inline-block;
+         margin: 10px;
+         margin-left: 10px;
+        font-size: 17px;
+      }
+    .list li select{
+      border: none;
+    }
+    .code h1{
+     margin-left: 130px;
+     margin-top: 50px;
+     font-size: 90px;
+     color: green;
+     font-family:'Times New Roman', Times, serif;
+    }
+    .code p{
+      margin-left: 150px;
+      margin-top: 10px;
+     font-size: 20px;
+     color: black;
+    }
+    .code>img{
+      float: right;    
+      margin: 10px 100px 100px 10px;
+      width: 450px;
+    }
+    .mySlides 
+    {
+      display:none;
+      float: left;    
+      margin: 100px 100px 200px 50px;
+      width: 450px;
+    }
+    .wraptext{
+      margin: 300px 10px 300px 0px;
+    }
+    .wraptext li{
+      font-size: 20px;
+    }
+    .service h1{
+      font-size: 40px;
+      margin-left: 50px;
+    }
+    .service h3{
+      margin-left: 60px;
+    }
+    .service1>img{
+      margin-top: 100px;
+      margin-bottom: 200px;
+      width: auto;
+    }
+    table{
+      margin-left: 600px;
+      margin-bottom: 100px;
+    }
+   
+		table td {
+      margin-left: 100px;
+			padding: 15px;
+			text-align: center;
+			font-size: 18px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		
+		table td:hover {
+			color: green;
+			border: none;
+		}
+    .lists{
+      margin-left: 200px;
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+    .lists li :hover{
+      color:darkgreen;
+    }
+    .lists li h3{
+      color: gray;
+    }
+  </style>    
+  </head>
+  <body>
+
+
+
+    <header id="myHeader">
+      <div class="container">
+        <nav>
+          <ul>      
+              <ul class="menu">
+               <li> <h1>Upwork </h1> </li> 
+               <li>
+                       Find Work
+                  <ul class="sub-menu">
+                    <li>Web Development</li>
+                    <li>App Development</li>
+                    <li>Graphic Designing</li>
+                    <li>Game Developer</li>
+                    <li>Blockchain Developer</li>
+                  </ul>
+                </li>
+                <li >
+                          Find Talent
+                  <ul class="sub-menu">
+                    <li>Web Development</li>
+                    <li>App Development</li>
+                    <li>Graphic Designing</li>
+                    <li>Game Developer</li>
+                    <li>Blockchain Developer</li>
+                  </ul>
+                </li>
+                <li >
+                         Why Upwork
+                  <ul class="sub-menu">
+                    <li>Rewards</li>
+                    <li>Location</li>
+                    <li>Success Stories</li>
+                    <li>Review </li>
+                  </ul>
+
+                     <li>Enterprise</li>
+                </li>
+                 
+              <form class="search-form">
+              <li> <a href="#"><i class="fa fa-fw fa-search"></i><input type="text" placeholder="Search..."> </a></li>
+                <select>
+                    <option value="All"> Talent</option>
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                    <option value="Option 3">Option 3</option>
+                  </select> 
+             <li><a href="https://www.upwork.com/ab/account-security/login"  class="log-in">Log In</a></li>
+             <li><button type="button" class="sign-up-button">Sign up</button></li>
+            </form> </li>
+          </ul>
+          </ul>
+        </nav> 
+    </header>
+  </div>
+  
+
+
+  
+
+
+  <main>
+      <section class="hero">
+        <div class="container">
+          <ul class="list">
+            <li> Development & IT </li>   
+            <li>  Design & Creative</li>       
+            <li> Sales & Marketing </li>    
+            <li> Writing & Translation </li> 
+            <li> Admin & Customer Support</li>  
+            <li class="hiden"> <select>  <option value="All"> Moreeee</option>  </select> </li> 
+          </ul>
+        </div>
+
+        <div class="code">
+        <img src="./images/pic.jpg" alt="hands">
+          <h1>How work <br>
+             Should work</h1>
+             
+          <p >Forget the old rules. You can have the best people.<br>
+            Right now. Right here.</p> </div>
+            
+          <div class="but">
+            <a href="#" class="button">Get started</a>
+          </div>
+          
+
+
+      </section>
+      <section class="services">
+        <div class="w3-content w3-section" style="max-width:500px">
+          <img class="mySlides w3-animate-top" src="./images/join-for-free.png" style="width:100%">
+          <img class="mySlides w3-animate-bottom" src="./images/post-a-job.png" style="width:100%">
+          <img class="mySlides w3-animate-top" src="./images/review-top-talent.png" style="width:100%">
+        </div>
+        <div class="wraptext">  
+          <ul>
+            <li><h1>Up your work game,it’s free.</h1></li><br>
+            <li><h3>No cost to join.</h3></li>
+            <li>Register and browse professionals, explore projects, or even book a consultation.</li><br><br>
+            <li><h3>Post a job and hire top talent.</h3></li>
+            <li>Finding talent doesn’t have to be a chore. Post a job or we can search for you!</li><br><br>
+            <li><h3>Work with the best—without breaking the bank.</h3></li>
+            <li>Upwork makes it affordable to up your work and take advantage of low transaction rates</li><br>
+            <li><button type="button" class="sign-up-button">Sign up for free</button></li>    
+           
+          </ul>
+        </div>
+
+
+        <div class="container">
+          <h1></h1>
+          <div class="service">
+            <img src="" alt="">
+            <h1 >Browse talent by category</h1><br>
+            <h3>Looking for work? Browse jobs</h3><br><br>
+            <div class="pictures">
+               <img src="./images/Job-Pupose-and-Meaning-1200x628-1-1024x536.jpg" alt="job"><br><br><br><br>
+            </div>
+          </div>
+          <div class="service2">
+            <img src="./images/pp.png" alt="Web Development">
+          </div>
+          <div class="service1">
+            <img src="./images/1614177130686.png" alt="Copywriting">
+          </div>
+          <h1>Trusted by leading
+            brands and startups</h1>
+        </div>
+        <div class="lists">
+          <ul>
+            <li><h2>Top skills</h2></li>
+           <li> <h3>Trending skills</h3></li>
+           <li> <h3>Top skills in US</h3>  </li>
+        </div>
+        <div>
+       
+       
+       <!--Table at the end -->
+        <table>
+            <tr>
+              <td>Data Entry Specialists</td>
+              <td>Graphic Designer</td>
+            </tr>
+            <tr>
+              <td>Video Editors</td>
+              <td>iOS Developer</td>
+            </tr>
+            <tr>
+              <td>Data Analyst</td>
+              <td>Java Developer</td>
+            </tr>
+            <tr>
+              <td>Shopify Developer</td>
+              <td>JavaScript Developer</td>
+            </tr>
+            <tr>
+              <td>Ruby on Rails Developer</td>
+              <td>Logo Designer</td>
+            </tr>
+            <tr>
+              <td>Android Developer</td>
+              <td>Mobile App Developer</td>
+            </tr>
+            <tr>
+              <td>Bookkeeper</td>
+              <td>PHP Developer</td>
+            </tr>
+            <tr>
+              <td>Content Writer</td>
+              <td>Python Developer</td>
+            </tr>
+            <tr>
+              <td>Copywriter</td>
+              <td>Resume Writer</td>
+            </tr>
+            <tr>
+              <td>Database Administrator</td>
+              <td>SEO Expert</td>
+            </tr>
+            <tr>
+              <td>Data Scientist</td>
+              <td>Social Media Manager</td>
+            </tr>
+            <tr>
+              <td>Front-End Developer</td>
+              <td>Software Developer</td>
+            </tr>
+            <tr>
+              <td>Game Developer</td>
+              <td>Software Engineer</td>
+            </tr>
+            <tr>
+              <td>UI Designer</td>
+              <td>Technical Writer</td>
+            </tr>
+            <tr>
+              <td>UX Designer</td>
+              <td>Virtual Assistant</td>
+            </tr>
+            <tr>
+              <td>Web Designer</td>
+              <td>WordPress Developer</td>
+            </tr>
+          </table>
+
+
+
+        </div>
+      </section>
+    </main>
+      
+  
+
+    <footer>
+<!-- Footer -->
+<footer class=" text-center text-white" style="background-color:#032b11;">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+      <!-- Github -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="#!" role="button"><i class="fab fa-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example2" class="form-control" />
+              <label class="form-label" for="form5Example2">Email address</label>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+        distinctio earum repellat quaerat voluptatibus placeat nam,
+        commodi optio pariatur est quia magnam eum harum corrupti dicta,
+        aliquam sequi voluptate quas.
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 2</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 3</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 2</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 3</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 2</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 3</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 2</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 3</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+
+    <!--javascript-->
+    <!--for tansition image-->
+    <script>
+      var myIndex = 0;
+      carousel();
+      
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2500);    
+      }
+      window.onscroll = function() {myFunction()};
+
+
+      //for sticky header   
+      var header = document.getElementById("myHeader");
+      var sticky = header.offsetTop;
+      function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+      </script>
+
+
+
+       <!-- some scripts to use Bootstrap JavaScript and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+      
